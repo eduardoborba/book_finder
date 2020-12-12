@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import logo from './logo.svg';
-import './App.css';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import Book from './Book/Book';
 
 function App() {
   const [data, setData] = useState({ items: [] });
@@ -12,7 +11,7 @@ function App() {
     let ignore = false;
 
     async function fetchData() {
-      const result = await axios('http://localhost:3000/books?search_term=Harry Potter');
+      const result = await axios('http://localhost:3000/books?search_term=' + query);
       if (!ignore) setData(result.data);
     }
 
@@ -23,24 +22,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button
-          variant="primary"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </Button>
         <input value={query} onChange={e => setQuery(e.target.value)} />
         <ul>
-          {data && data.items.map(item => (
-            <li key={item.id}>
-              <a href={item.selfLink}>{item.volumeInfo.title}</a>
-            </li>
+          {data.items.map(item => (
+            <Book book={item}></Book>
           ))}
         </ul>
       </header>

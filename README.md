@@ -1,2 +1,3 @@
-# book_finder
+# Book Finder
+
 Book Finder app using React + Rails

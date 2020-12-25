@@ -1,4 +1,5 @@
-import { Row, Col } from 'react-bootstrap';
+import React from 'react';
+import { Row } from 'react-bootstrap';
 import Book from './Book';
 
 function Books(props) {
@@ -7,10 +8,8 @@ function Books(props) {
   return (
     <Row>
       {
-        books.map(book => (
-          <Col>
-            <Book book={book}></Book>
-          </Col>
+        books.length > 0 && books.map(book => (
+          <Book key={book.id} book={book}></Book>
         ))
       }
     </Row>

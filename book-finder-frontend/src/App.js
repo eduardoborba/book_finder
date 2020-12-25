@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Button from 'react-bootstrap/Button';
+import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
-import Book from './Book/Book';
+import Books from './components/Books';
 
 function App() {
   const [data, setData] = useState({ items: [] });
@@ -20,16 +20,14 @@ function App() {
   }, [query]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <input value={query} onChange={e => setQuery(e.target.value)} />
-        <ul>
-          {data.items.map(item => (
-            <Book book={item}></Book>
-          ))}
-        </ul>
-      </header>
-    </div>
+    <Container fluid>
+      <Row>
+        <Col>
+          <input value={query} onChange={e => setQuery(e.target.value)} />
+        </Col>
+      </Row>
+      <Books books={data.items} />
+    </Container>
   );
 }
 

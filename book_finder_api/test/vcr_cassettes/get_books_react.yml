@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/books/v1/volumes?key=AIzaSyA6oq3hV6t2q7k-7MVqiDjcns6Gelvg7q4&maxResults=15&q=react
+    uri: https://www.googleapis.com/books/v1/volumes?key=GOOGLE_API_KEY&maxResults=15&q=react
     body:
       encoding: US-ASCII
       string: ''

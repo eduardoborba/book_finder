@@ -14,6 +14,5 @@ class ActiveSupport::TestCase
     config.hook_into :webmock
   end
 
-
   # Add more helper methods to be used by all tests here...
 end

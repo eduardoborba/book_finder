@@ -25,8 +25,10 @@ function App() {
     <Container fluid>
       <Navbar
         fixed="top"
-        className="bg-dark justify-content-end"
+        className="bg-dark justify-content-between"
+        variant="dark"
       >
+        <Navbar.Brand>Book Finder</Navbar.Brand>
         <form onSubmit={handleSubmit}>
           <input
             className="search"

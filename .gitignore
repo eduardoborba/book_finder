@@ -1,7 +1,7 @@
 book_finder_api/config/master.key
 book_finder_api/tmp/*
 book_finder_api/log/*
-
+book_finder_api/db/test.sqlite3*
 
 
 

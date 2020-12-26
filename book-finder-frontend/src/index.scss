@@ -1,1 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
+
+
+.search {
+  padding: 3px 5px;
+
+  &:focus {
+    outline: none;
+  }
+}
